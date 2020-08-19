@@ -1,5 +1,4 @@
 from unittest import TestCase
-import unittest
 
 from pyrunner_api.runner.pyrunner import PyRunner
 from pyrunner_api.runner.runresult import RunResult
