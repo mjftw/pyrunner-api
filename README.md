@@ -6,7 +6,7 @@
 
 A service which lets you submit python code to be run via a REST interface, and get the results.
 
-## running the tests
+## Running the tests
 
 A makefile is provided to make running some simple tasks easier.
 
