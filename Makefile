@@ -17,8 +17,8 @@ virtualenv: ## Create a virtual environment and install required packages into i
 	@[ -d $(VENV_NAME) ] || python3 -m virtualenv $(VENV_NAME)
 
 	@. ./$(VENV_ACTIVATE) && \
-    	python3 -m pip install --upgrade pip > /dev/null && \
-    	python3 -m pip install -r $(REQUIREMENTS) > /dev/null
+    	python3 -m pip install --upgrade pip && \
+    	python3 -m pip install -r $(REQUIREMENTS)
 
 test: virtualenv  ## Run the unit tests inside the virtualenv
 	@. ./$(VENV_ACTIVATE) && \
