@@ -1,6 +1,7 @@
 # pyrunner-api
 
 [![Build Status](https://travis-ci.com/mjftw/pyrunner-api.svg?branch=master)](https://travis-ci.com/mjftw/pyrunner-api)
+[![Coverage Status](https://coveralls.io/repos/github/mjftw/pyrunner-api/badge.svg?branch=master)](https://coveralls.io/github/mjftw/pyrunner-api?branch=master)
 
 A service which lets you submit python code to be run via a REST interface, and get the results
 
