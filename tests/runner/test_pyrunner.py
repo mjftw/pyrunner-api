@@ -16,3 +16,15 @@ class PyRunnerTest(TestCase):
         source = r'print("Hello World!")'
         output = self.runner.run(source)
         self.assertEqual('Hello World!\n', output)
+
+    def test_run_handles_stdout_from_multiple_code_lines(self):
+        source = ('print("Foo")\n'
+                  'print("Bar")\n')
+        output = self.runner.run(source)
+        self.assertEqual('Foo\nBar\n', output)
+
+    def test_run_should_give_no_output_on_empty_code(self):
+        self.assertEqual('', self.runner.run(''))
+
+    def test_run_should_give_no_output_on_only_comments(self):
+        self.assertEqual('', self.runner.run('#\n#'))
