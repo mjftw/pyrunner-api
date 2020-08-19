@@ -14,3 +14,11 @@ def client():
 def test_server_should_respond_to_root_request(client):
     response = client.get('/')
     assert response.data
+
+
+def test_server_should_respond_status_200_to_post_run_python_endpoint(client):
+    code = '#'
+    response = client.post('/run/python', data={
+        'code': code
+    })
+    assert 200 == response.status_code
