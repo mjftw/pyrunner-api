@@ -11,3 +11,8 @@ class PyRunnerTest(TestCase):
         source = '#'
         output = self.runner.run(source)
         self.assertIsInstance(output, str)
+
+    def test_run_handles_stdout_from_single_code_line(self):
+        source = r'print("Hello World!")'
+        output = self.runner.run(source)
+        self.assertEqual('Hello World!\n', output)
