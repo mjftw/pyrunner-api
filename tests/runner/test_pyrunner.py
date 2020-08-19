@@ -54,3 +54,15 @@ class PyRunnerTest(TestCase):
         ]
         result = self.runner.run('\n'.join(source_lines))
         self.assertEqual('3\n', result.stdout)
+
+    def test_run_exceptions_should_be_caught(self):
+        source = r'raise RuntimeError'
+        # Success if no exception raised to fail test
+        self.runner.run(source)
+
+    def test_run_should_return_traceback_to_stderr_on_exception(self):
+        source = r'raise RuntimeError("Foo Bar!")'
+        result = self.runner.run(source)
+        self.assertIn('Traceback (most recent call last):\n', result.stderr)
+        self.assertIn('File "<string>", line 1, in <module>\n'
+                      'RuntimeError: Foo Bar!\n', result.stderr)
