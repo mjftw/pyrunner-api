@@ -1,4 +1,3 @@
-import sys
 from io import StringIO
 from contextlib import redirect_stdout
 
