@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/mjftw/pyrunner-api.svg?branch=master)](https://travis-ci.com/mjftw/pyrunner-api)
 [![Coverage Status](https://coveralls.io/repos/github/mjftw/pyrunner-api/badge.svg?branch=master)](https://coveralls.io/github/mjftw/pyrunner-api?branch=master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d1fde7a229654f8e9b3852e90aa3a931)](https://www.codacy.com/manual/mjftw/pyrunner-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mjftw/pyrunner-api&amp;utm_campaign=Badge_Grade)
 
 A service which lets you submit python code to be run via a REST interface, and get the results
 
