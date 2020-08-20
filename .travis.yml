@@ -13,5 +13,5 @@ script:
   - python3 -m pytest --rootdir=tests
 
 after_success:
-  - coverage run --source=pyrunner_api -m pytest tests/
+  - coverage run --source=src/pyrunner -m pytest tests/
   - coveralls

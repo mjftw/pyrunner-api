@@ -1,4 +1,4 @@
-from pyrunner_api.runner.runresult import RunResult
+from pyrunner.runner.runresult import RunResult
 
 
 def test_run_returns_RunResult(pyrunner):

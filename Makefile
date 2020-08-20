@@ -17,10 +17,9 @@ virtualenv: ## Create a virtual environment and install required packages into i
 	@[ -d $(VENV_NAME) ] || python3 -m virtualenv $(VENV_NAME)
 
 	@. ./$(VENV_ACTIVATE) && \
-    	python3 -m pip install --upgrade pip && \
-    	python3 -m pip install -r $(REQUIREMENTS)
+    	python3 -m pip install --upgrade pip
 
-test: virtualenv  ## Run the unit tests inside the virtualenv
+test: virtualenv_install  ## Run the unit tests inside the virtualenv
 	@. ./$(VENV_ACTIVATE) && \
 		python3 -m pytest --rootdir=${TESTDIR}
 
@@ -31,3 +30,10 @@ clean: ## Remove the virtualenv and all pycache directories
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+
+######### Helper Targets #########
+
+virtualenv_install: virtualenv
+	@. ./$(VENV_ACTIVATE)  && \
+    	python3 -m pip install .

@@ -1,7 +1,7 @@
 import pytest
 
-from pyrunner_api.api import server
-from pyrunner_api.runner.pyrunner import PyRunner
+from pyrunner.api import server
+from pyrunner.runner.pyrunner import PyRunner
 
 
 @pytest.fixture
