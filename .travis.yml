@@ -7,11 +7,11 @@ python:
 
 install:
   - python3 -m pip install .
-  - python3 -m pip install coveralls
+  - python3 -m pip install coveralls coverage
 
 script:
   - python3 -m pytest --rootdir=tests
 
 after_success:
-  - coverage run --source=src/pyrunner -m pytest tests/
+  - python3 -m coverage run --source=pyrunner -m pytest tests/
   - coveralls
